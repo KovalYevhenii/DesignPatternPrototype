@@ -12,6 +12,5 @@ public class Engine
     /// Initializes a new instance of the <see cref="Engine"/> class.
     /// </summary>
     /// <param name="type">The type of the engine.</param>
-    public Engine(string type) => Type = type;
-    
+    public Engine(string type) => Type = type;   
 }
