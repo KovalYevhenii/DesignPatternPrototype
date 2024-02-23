@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternPrototype", "DesignPatternPrototype\DesignPatternPrototype.csproj", "{02C478A7-E187-48E5-9082-74703AD86CB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternPrototype", "DesignPatternPrototype\DesignPatternPrototype.csproj", "{02C478A7-E187-48E5-9082-74703AD86CB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneObjektsTest", "CloneObjektsTest\CloneObjektsTest.csproj", "{03C4C5E0-4060-4DC0-9548-367A86788CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{02C478A7-E187-48E5-9082-74703AD86CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C478A7-E187-48E5-9082-74703AD86CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C478A7-E187-48E5-9082-74703AD86CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C4C5E0-4060-4DC0-9548-367A86788CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C4C5E0-4060-4DC0-9548-367A86788CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C4C5E0-4060-4DC0-9548-367A86788CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C4C5E0-4060-4DC0-9548-367A86788CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
