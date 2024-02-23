@@ -5,23 +5,16 @@ namespace DesignPatternPrototype;
 /// <summary>
 /// Represents a transporter ship in the cosmos.
 /// </summary>
-public class CosmoTransporter : CosmoShip, IMyClonable<object>, ICloneable
+public class CosmoTransporter : CosmoShip, IMyClonable<CosmoTransporter>
 {
     /// <summary>
     /// Gets a value indicating whether this transporter can transport resources.
     /// </summary>
-    public bool IsResourceTransportabe { get; private set; }
+    public bool IsResourceTransportabe { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="CosmoTransporter"/> class.
     /// </summary>
-    public CosmoTransporter()
-    {
-        IsResourceTransportabe = true;
-        Weight = 130_4000;
-        MaxCrewCapacity = 25;
-        MaxLoadCapacity = 20_0000;
-        Console.WriteLine(_engine.Type);
-    }
+    public CosmoTransporter( ) : base(){}
     /// <summary>
     /// Transports resources if possible.
     /// </summary>
@@ -38,16 +31,16 @@ public class CosmoTransporter : CosmoShip, IMyClonable<object>, ICloneable
             Console.WriteLine("Sorry I cant transport resources");
         }
     }
-    public object MyClone()
+    public CosmoTransporter MyClone()
     {
-        CosmoTransporter cosmoTransporter = new()
+        return new CosmoTransporter
         {
-            IsResourceTransportabe = IsResourceTransportabe,
             Weight = Weight,
+            MaxCrewCapacity = MaxCrewCapacity,
             MaxLoadCapacity = MaxLoadCapacity,
-            MaxCrewCapacity = MaxCrewCapacity
+            IsResourceTransportabe = IsResourceTransportabe,
+            Engine = Engine
         };
-        return cosmoTransporter;
     }
     /// <summary>
     /// Creates a new transporter that is a copy of the current instance.
@@ -55,6 +48,13 @@ public class CosmoTransporter : CosmoShip, IMyClonable<object>, ICloneable
     /// <returns>A new object that is a copy of this instance.</returns>
     public override object Clone()
     {
-        return base.Clone();
+        return new CosmoTransporter
+        {
+            Weight = Weight,
+            MaxCrewCapacity = MaxCrewCapacity,
+            MaxLoadCapacity = MaxLoadCapacity,
+            IsResourceTransportabe = IsResourceTransportabe,
+            Engine = Engine
+        };
     }
 }

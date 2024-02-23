@@ -1,32 +1,36 @@
 ﻿using DesignPatternPrototype.Interfaces;
 namespace DesignPatternPrototype;
-public class CosmoWarship : CosmoShip, IMyClonable<object>, ICloneable
+public class CosmoWarship : CosmoShip, IMyClonable<CosmoWarship>
 {
     public int WeaponPower { get; set; }
-    public CosmoWarship()
+    public CosmoWarship() : base()
     {
-        Weight = 140_4000;
-        MaxCrewCapacity = 70;
-        MaxLoadCapacity = 20_0000;
-        WeaponPower = 1000;
+
     }
     public void FireWeapons()
     {
         Console.WriteLine($"Firing weapons with power: {WeaponPower}");
     }
-    public object MyClone()
+    public CosmoWarship MyClone()
     {
-        CosmoWarship cosmoWarship = new()
+        return new CosmoWarship
         {
             Weight = Weight,
             MaxCrewCapacity = MaxCrewCapacity,
             MaxLoadCapacity = MaxLoadCapacity,
-            WeaponPower = WeaponPower
+            WeaponPower = WeaponPower,
+            Engine = Engine
         };
-        return cosmoWarship;
     }
     public override object Clone()
     {
-        return MyClone();
+        return new CosmoWarship
+        {
+            Weight = Weight,
+            MaxCrewCapacity = MaxCrewCapacity,
+            MaxLoadCapacity = MaxLoadCapacity,
+            WeaponPower = WeaponPower,
+            Engine = Engine
+        };
     }
 }

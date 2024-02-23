@@ -1,32 +1,20 @@
 ﻿namespace DesignPatternPrototype;
-    /// <summary>
-    /// Represents a ship in the cosmos.
-    /// </summary>
+/// <summary>
+/// Represents a ship in the cosmos.
+/// </summary>
 public class CosmoShip : BaseShip, ICloneable
 {
-    protected readonly Engine _engine;
     /// <summary>
     /// Initializes a new instance of the <see cref="CosmoShip"/> class.
     /// </summary>
-    public CosmoShip()
-    {
-        Weight = 120_4000;
-        MaxCrewCapacity = 50;
-        MaxLoadCapacity = 20_0000;
-        _engine = new Engine("Ion engine turbo");
-    }
+    public CosmoShip() : base(){}
     /// <summary>
     /// Creates a new ship that is a copy of the current instance.
     /// </summary>
     /// <returns>A new object that is a copy of this instance.</returns>
     public virtual object Clone()
     {
-        return new CosmoShip()
-        {
-            Weight = Weight,
-            MaxCrewCapacity = MaxCrewCapacity,
-            MaxLoadCapacity = MaxLoadCapacity
-        };
+        return new CosmoShip();
     }
     /// <summary>
     /// Moves the ship.
