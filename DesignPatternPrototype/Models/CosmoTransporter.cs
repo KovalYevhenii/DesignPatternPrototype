@@ -12,10 +12,6 @@ public class CosmoTransporter : CosmoShip, IMyClonable<CosmoTransporter>
     /// </summary>
     public bool IsResourceTransportabe { get; set; }
     /// <summary>
-    /// Initializes a new instance of the <see cref="CosmoTransporter"/> class.
-    /// </summary>
-    public CosmoTransporter( ) : base(){}
-    /// <summary>
     /// Transports resources if possible.
     /// </summary>
     public void CanTransportResources()
@@ -48,13 +44,6 @@ public class CosmoTransporter : CosmoShip, IMyClonable<CosmoTransporter>
     /// <returns>A new object that is a copy of this instance.</returns>
     public override object Clone()
     {
-        return new CosmoTransporter
-        {
-            Weight = Weight,
-            MaxCrewCapacity = MaxCrewCapacity,
-            MaxLoadCapacity = MaxLoadCapacity,
-            IsResourceTransportabe = IsResourceTransportabe,
-            Engine = Engine
-        };
+        return MyClone();
     }
 }

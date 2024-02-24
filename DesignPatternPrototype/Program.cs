@@ -5,7 +5,6 @@ namespace DesignPatternPrototype
     {
         static void Main(string[] args)
         {
-
             var transporter = new CosmoTransporter()
             {
                 IsResourceTransportabe = true,

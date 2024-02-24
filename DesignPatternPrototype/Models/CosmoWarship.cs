@@ -3,10 +3,6 @@ namespace DesignPatternPrototype;
 public class CosmoWarship : CosmoShip, IMyClonable<CosmoWarship>
 {
     public int WeaponPower { get; set; }
-    public CosmoWarship() : base()
-    {
-
-    }
     public void FireWeapons()
     {
         Console.WriteLine($"Firing weapons with power: {WeaponPower}");
@@ -24,13 +20,6 @@ public class CosmoWarship : CosmoShip, IMyClonable<CosmoWarship>
     }
     public override object Clone()
     {
-        return new CosmoWarship
-        {
-            Weight = Weight,
-            MaxCrewCapacity = MaxCrewCapacity,
-            MaxLoadCapacity = MaxLoadCapacity,
-            WeaponPower = WeaponPower,
-            Engine = Engine
-        };
+        return MyClone();
     }
 }

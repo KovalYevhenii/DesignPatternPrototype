@@ -6,7 +6,14 @@ public class CloneCosmoWarshipTest
     [Fact]
     public void Clone_CreatesIdenticalObj()
     {
-        CosmoWarship original = new();
+        CosmoWarship original = new()
+        {
+            WeaponPower = 1,
+            Weight = 130_7000,
+            MaxCrewCapacity = 33,
+            MaxLoadCapacity = 17_0000,
+            Engine = new Engine(" Ion engine turbo")
+        };
         CosmoWarship clone = (CosmoWarship)original.Clone();
 
         Assert.Equal(original.WeaponPower, clone.WeaponPower);
